@@ -9,10 +9,11 @@ print("this is running")
 # First, stow the robot
 robot.stow()
 robot.push_command()
+time.sleep(5.0)
 
 # Next, move the arm all the way out and the lift all the way up
 robot.arm.move_to(0.5)
-robot.lift.move_to(0.4)
+robot.lift.move_to(1.1)
 robot.push_command()
 robot.arm.wait_until_at_setpoint() # Wait for things to move
 robot.lift.wait_until_at_setpoint()
@@ -28,6 +29,15 @@ robot.end_of_arm.move_to('wrist_pitch', np.radians(30))
 robot.push_command()
 time.sleep(2.0)
 
+# Move the gripper
+robot.end_of_arm.move_to('stretch_gripper', 100) # fully open at 100
+robot.push_command()
+time.sleep(2.0)
+
+robot.end_of_arm.move_to('stretch_gripper', -100) # fully closed at -100
+robot.push_command()
+time.sleep(2.0)
+
 # Move the head
 robot.head.move_by('head_pan', np.radians(45))
 robot.push_command()
@@ -39,6 +49,7 @@ time.sleep(1.0)
 # Stow the robot
 robot.stow()
 robot.push_command()
+time.sleep(5.0)
 
 # Move the base
 robot.base.translate_by(0.5)
