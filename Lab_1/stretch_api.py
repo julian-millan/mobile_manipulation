@@ -25,7 +25,7 @@ robot.end_of_arm.move_to('wrist_roll', np.radians(30))
 robot.push_command()
 time.sleep(2.0)
 robot.end_of_arm.move_to('wrist_pitch', np.radians(30))
-robot.push_command(0)
+robot.push_command()
 time.sleep(2.0)
 
 # Move the head
