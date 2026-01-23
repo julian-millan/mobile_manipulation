@@ -43,8 +43,12 @@ robot.push_command()
 # Move the base
 robot.base.translate_by(0.5)
 robot.push_command()
+time.sleep(5.0)
 robot.base.rotate_by(np.radians(180))
 robot.push_command()
+time.sleep(5.0)
 robot.base.translate_by(0.5)
+robot.push_command()
+time.sleep(5.0)
 # Stop the robot
 robot.stop()
