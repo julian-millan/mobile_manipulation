@@ -36,12 +36,12 @@ class MoveNode(hm.HelloNode):
         # self.move_to_pose({'joint_lift': 1.1}, blocking=True)
         # Allow for individual wrist movements
         self.move_to_pose({'joint_wrist_yaw': np.radians(30)}, blocking=True)
-        self.move_to_pose({'joint_wrist_pitch': np.radians(30)}, blocking=True)
         self.move_to_pose({'joint_wrist_roll': np.radians(-30)}, blocking=True)
+        self.move_to_pose({'joint_wrist_pitch': np.radians(30)}, blocking=True)
         # Now open and close gripper, I'm just going to assume both sides should have the same sign, and 100 to -100 is still valid to start
-        self.move_to_pose({'joint_gripper_finger_left': 0.2, 'joint_gripper_finger_right': 0.2}, blocking=True)
+        self.move_to_pose({'gripper_aperture': 0.2}, blocking=True)
         # Now open gripper
-        self.move_to_pose({'joint_gripper_finger_left': -0.2, 'joint_gripper_finger_right': -0.2}, blocking=True)
+        self.move_to_pose({'gripper_aperture': 0.2}, blocking=True)
         # Now move the robot head
         self.move_to_pose({'joint_head_pan': np.radians(45)}, blocking=True)
         self.move_to_pose({'joint_head_tilt': np.radians(45)}, blocking=True)
