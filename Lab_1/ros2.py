@@ -44,7 +44,7 @@ class MoveNode(hm.HelloNode):
         self.move_to_pose({'gripper_aperture': -0.2}, blocking=True)
         # Now move the robot head
         self.move_to_pose({'joint_head_pan': np.radians(45)}, blocking=True)
-        self.move_to_pose({'joint_head_tilt': np.radians(90)}, blocking=True)
+        self.move_to_pose({'joint_head_tilt': np.radians(-45)}, blocking=True)
         # Stow for base movement
         self.stow_the_robot()
         time.sleep(1.0)
