@@ -23,7 +23,7 @@ class MoveNode(hm.HelloNode):
         hm.HelloNode.__init__(self)
         print("initialized!")
     def main(self):
-        hm.HelloNode.main(self, 'move_node', 'move_node', wait_for_first_pointcloud=False)
+        hm.HelloNode.main(self, 'my_node', 'my_node', wait_for_first_pointcloud=False)
         print("we ballin")
 
         # Now we do main movement logic
