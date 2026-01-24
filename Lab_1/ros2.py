@@ -31,9 +31,9 @@ class MoveNode(hm.HelloNode):
         self.stow_the_robot() # always stow first
         time.sleep(1.0) # Do we need to sleep between actions? Not sure. Actually, blocking arg should handle this.
         # Recall we need to extend arm and raise the lift SIMULTANEOUSLY
-        self.move_to_pose({'joint_arm': 0.5}, blocking=False) # Setting blocking to False should allow simultaneous movement
-        # We can also write something like: self.move_to_pose({'joint_arm': 0.5, 'joint_lift': 1.1}, blocking=True)
-        self.move_to_pose({'joint_lift': 1.1}, blocking=True)
+        # self.move_to_pose({'joint_arm': 0.5}, blocking=False) # Setting blocking to False should allow simultaneous movement
+        self.move_to_pose({'joint_arm': -0.5, 'joint_lift': 1.1}, blocking=True)
+        # self.move_to_pose({'joint_lift': 1.1}, blocking=True)
         # Allow for individual wrist movements
         self.move_to_pose({'joint_wrist_yaw': np.radians(30)}, blocking=True)
         self.move_to_pose({'joint_wrist_pitch': np.radians(30)}, blocking=True)
