@@ -21,8 +21,10 @@ class MoveNode(hm.HelloNode):
     # Below is from the hello robot tutorial
     def __init__(self):
         hm.HelloNode.__init__(self)
+        print("initialized!")
     def main(self):
         hm.HelloNode.main(self, 'move_node', 'move_node', wait_for_first_pointcloud=False)
+        print("we ballin")
 
         # Now we do main movement logic
         self.stow_the_robot() # always stow first
