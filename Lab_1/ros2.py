@@ -41,10 +41,10 @@ class MoveNode(hm.HelloNode):
         # Now open and close gripper, I'm just going to assume both sides should have the same sign, and 100 to -100 is still valid to start
         self.move_to_pose({'gripper_aperture': 0.2}, blocking=True)
         # Now open gripper
-        self.move_to_pose({'gripper_aperture': 0.2}, blocking=True)
+        self.move_to_pose({'gripper_aperture': -0.2}, blocking=True)
         # Now move the robot head
         self.move_to_pose({'joint_head_pan': np.radians(45)}, blocking=True)
-        self.move_to_pose({'joint_head_tilt': np.radians(45)}, blocking=True)
+        self.move_to_pose({'joint_head_tilt': np.radians(90)}, blocking=True)
         # Stow for base movement
         self.stow_the_robot()
         time.sleep(1.0)
